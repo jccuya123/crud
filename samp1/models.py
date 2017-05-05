@@ -12,6 +12,6 @@ class Account(models.Model):
 	lname = models.CharField("Last Name", max_length=50)
 	user = models.CharField("User", max_length=50)
 	password = models.CharField("Password", max_length=50)
-
+	
 	class Meta:
 		db_table = "sampledb"
