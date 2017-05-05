@@ -1,0 +1,21 @@
+{% extends 'samp1/base_site.html' %}
+
+{% block content %}
+
+<div class = "con">
+	<h1> Accounts </h1>
+	<ul>
+	{% for samp1 in object_list %}
+	<br><li>{{ samp1.user }} :
+
+	<a href = "{% url 'account_update' samp1.id %}"><button class="btn btn-warning">Update {{samp1.address }}</button></a>
+
+	<a href = "{% url 'account_delete' samp1.id %}"><button class="btn btn-warning">Delete</button></a>
+	
+	</li> {% endfor %}
+	</ul>
+
+	<a href = "{% url 'account_insert' %}"><button class="btn btn-warning">Create New</button></a>
+	</ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+<h1> Accounts </h1>
+<ul>
+{% for samp1 in object_list %}
+<li>{{ servers.name }} :
+<a href = "{% url 'account_update' samp1.id %}">Update > {{samp1.address }}</a>
+<a href = "{% url 'account_delete' samp1.id %}">Delete> </a>
+</li> {% endfor %}
+</ul>
+
+<a href = "{% url 'account_insert' %}">Create New</a>
+</ul>
