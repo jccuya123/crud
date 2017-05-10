@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.forms import ModelForm
 from .models import Account
-
+from django.contrib.auth.forms import AuthenticationForm
 # Create your models here.
 
 class AccountForm(ModelForm):
@@ -19,3 +19,19 @@ class AccountForm(ModelForm):
 			'user': forms.TextInput(attrs={'size':'44'}),
             'password': forms.PasswordInput(attrs={'size': '38'}, render_value = True),
         }
+
+
+#login form for user
+class LoginForm(AuthenticationForm):
+
+    username = forms.CharField(max_length=254, 
+
+        widget=forms.TextInput(
+
+            attrs={'class': 'form-control', 'placeholder' : 'Username', 'autofocus' : 'true'}))
+
+    password = forms.CharField(strip=False, 
+
+        widget=forms.PasswordInput(
+
+            attrs={'class': 'form-control', 'placeholder' : 'Password'}))
