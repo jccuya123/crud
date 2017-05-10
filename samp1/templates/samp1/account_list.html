@@ -2,19 +2,24 @@
 
 {% block content %}
 <div class = "con">
-	<h1> Accounts </h1>
+	<div class = 'namae'>
+		<h1> Accounts </h1>
+	</div>
 	<ul>
 	{% for samp1 in object_list %}
-	<br><li>{{ samp1.user }} :
+	<div class = "list">
+		<li>{{ samp1.user }} :
 
-	<a href = "{% url 'account_update' samp1.id %}"><button class="btn btn-warning">Update</button></a>
+		<a href = "{% url 'account_update' samp1.id %}"><button class="btn btn-warning">Update</button></a>
 
-	<a href = "{% url 'account_delete' samp1.id %}"><button class="btn btn-warning">Delete</button></a>
-	
-	</li> {% endfor %}
+		<a href = "{% url 'account_delete' samp1.id %}"><button class="btn btn-warning">Delete</button></a>
+		
+		</li> 
+	</div>{% endfor %}
 	</ul>
 
 	<a href = "{% url 'account_insert' %}"><button class="btn btn-warning">Create New </button></a>
+	<a href = "{% url 'logout' %}">Logout</a>
 	</ul>
 </div>
 {% endblock content %}
