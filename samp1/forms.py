@@ -28,10 +28,10 @@ class LoginForm(AuthenticationForm):
 
         widget=forms.TextInput(
 
-            attrs={'class': 'form-control', 'placeholder' : 'Username', 'autofocus' : 'true'}))
+            attrs={'size': '30', 'class': 'form-control', 'placeholder' : 'Username', 'autofocus' : 'true'}))
 
     password = forms.CharField(strip=False, 
 
         widget=forms.PasswordInput(
 
-            attrs={'class': 'form-control', 'placeholder' : 'Password'}))
+            attrs={'size': '30', 'class': 'form-control', 'placeholder' : 'Password'}))
